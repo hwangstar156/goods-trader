@@ -1,0 +1,64 @@
+.sign-in-page {
+  width: 100%;
+  height: 100vh;
+
+  z-index: 1;
+  &::before {
+    content: "";
+    background: rgb(193, 167, 198);
+    background: linear-gradient(
+      34deg,
+      rgba(193, 167, 198, 1) 14%,
+      rgba(52, 50, 68, 1) 60%,
+      rgba(0, 0, 0, 1) 95%
+    );
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    filter: blur(2px);
+  }
+
+  & .sign-in-container {
+    width: 70%;
+    height: 70%;
+    background-color: lightgray;
+    transform: translate(22%, 20%);
+    border-radius: 2rem;
+    display: flex;
+
+    & .sign-in-detail {
+      width: 40%;
+      height: 100%;
+      background-image: url(https://i.pinimg.com/originals/a0/74/a8/a074a8a62cf3c17b39c70aa1270ef4eb.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 2rem 0 0 2rem;
+      color: white;
+      text-align: center;
+      position: relative;
+      & h2 {
+        margin: 7rem;
+        font-size: 40px;
+      }
+      & p {
+        font-weight: 500;
+        font-size: 1rem;
+        margin-top: 5rem;
+        position: absolute;
+        bottom: 2rem;
+        left: 2rem;
+      }
+      & div {
+        padding: 0 4rem;
+        & strong {
+          color: tomato;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
