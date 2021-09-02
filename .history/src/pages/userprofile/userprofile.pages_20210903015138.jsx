@@ -39,7 +39,7 @@ const UserProfilePage = () => {
 
     const config = {
       file: fileUrl,
-      maxSize: 512,
+      maxSize: 540,
     };
     resizeImage(config)
       .then(async (resizedImage) => {

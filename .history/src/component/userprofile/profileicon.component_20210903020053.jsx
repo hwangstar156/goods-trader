@@ -12,10 +12,8 @@ import { useHistory } from "react-router-dom";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/user/user.selector";
-import resizeImage from "../../pages/userprofile/userprofile.utils";
 const ProfileIcon = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [userIconImage, setUserIconImage] = useState("");
   const history = useHistory();
   const currentUser = useSelector(selectCurrentUser);
   const { photoUrl } = currentUser;
@@ -23,37 +21,11 @@ const ProfileIcon = () => {
     auth.signOut();
   };
 
-  const LoadingImage = (e) => {
-    const img = e.target;
-    const imgTag = e.target.parentNode;
-    const widthDiff = (img.clientWidth - imgTag.offsetWidth) / 2;
-    const heightDiff = (img.clientHeight - imgTag.offsetHeight) / 2;
-    img.style.transform = `translate( -${widthDiff}px , -${heightDiff}px)`;
-  };
-
   const moveToProfilePage = () => {
     history.push("/profile");
   };
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
-  useEffect(() => {
-    const handleChangeImage = async (e) => {
-      const config = {
-        file: photoUrl,
-        maxSize: 150,
-      };
-      resizeImage(config)
-        .then(async (resizedImage) => {
-          console.log(resizedImage);
-          setUserIconImage(resizedImage);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    };
-    handleChangeImage();
-  }, [photoUrl]);
-
+  useEffect(() => {});
   return (
     <Dropdown isOpen={dropdownOpen} toggle={toggle}>
       <DropdownToggle
@@ -62,7 +34,7 @@ const ProfileIcon = () => {
         aria-expanded={dropdownOpen}
         className="user-profile"
       >
-        <img src={userIconImage} alt="" onLoad={LoadingImage} />
+        <img src="" alt="" />
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem onClick={moveToProfilePage}>마이 프로필</DropdownItem>

@@ -14,7 +14,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isFetching: true,
       };
-    case UserActionTypes.REFRESH_USER_SUCCESS:
+    case UserActionTypes.REFRESH_USER:
     case UserActionTypes.SIGN_IN_SUCCESS:
       return {
         ...state,

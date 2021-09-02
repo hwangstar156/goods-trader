@@ -23,14 +23,6 @@ const ProfileIcon = () => {
     auth.signOut();
   };
 
-  const LoadingImage = (e) => {
-    const img = e.target;
-    const imgTag = e.target.parentNode;
-    const widthDiff = (img.clientWidth - imgTag.offsetWidth) / 2;
-    const heightDiff = (img.clientHeight - imgTag.offsetHeight) / 2;
-    img.style.transform = `translate( -${widthDiff}px , -${heightDiff}px)`;
-  };
-
   const moveToProfilePage = () => {
     history.push("/profile");
   };
@@ -62,7 +54,7 @@ const ProfileIcon = () => {
         aria-expanded={dropdownOpen}
         className="user-profile"
       >
-        <img src={userIconImage} alt="" onLoad={LoadingImage} />
+        <img src={userIconImage} alt="" />
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem onClick={moveToProfilePage}>마이 프로필</DropdownItem>

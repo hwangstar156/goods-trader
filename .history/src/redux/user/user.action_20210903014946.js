@@ -59,8 +59,3 @@ export const refreshUserSuccess = (user) => ({
   type: UserActionTypes.REFRESH_USER_SUCCESS,
   payload: user,
 });
-
-export const refreshUserFailure = (err) => ({
-  type: UserActionTypes.REFRESH_USER_FAILURE,
-  payload: err,
-});

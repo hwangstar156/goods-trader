@@ -14,7 +14,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isFetching: true,
       };
-    case UserActionTypes.REFRESH_USER_SUCCESS:
+    case UserActionTypes.REFRESH_USER:
     case UserActionTypes.SIGN_IN_SUCCESS:
       return {
         ...state,
@@ -28,7 +28,6 @@ const userReducer = (state = INITIAL_STATE, action) => {
         currentUser: null,
         error: null,
       };
-    case UserActionTypes.REFRESH_USER_FAILURE:
     case UserActionTypes.SIGN_IN_FAILURE:
     case UserActionTypes.SIGN_OUT_FAILURE:
     case UserActionTypes.SIGN_UP_FAILURE:
