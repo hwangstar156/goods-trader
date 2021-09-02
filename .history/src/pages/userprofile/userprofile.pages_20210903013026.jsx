@@ -5,6 +5,9 @@ import "./userprofile.styles.scss";
 import {
   changeUserImage,
   updateUserProfileImage,
+  auth,
+  firestore,
+  getCurrentUser,
 } from "../../firebase/firebase.utils";
 import resizeImage from "./userprofile.utils";
 import { useRef } from "react";
@@ -35,16 +38,14 @@ const UserProfilePage = () => {
 
     const config = {
       file: fileUrl,
-      maxSize: 540,
+      maxSize: 350,
     };
     resizeImage(config)
       .then(async (resizedImage) => {
         changeUserImage(currentUser, resizedImage);
-        const newUser = {
-          ...currentUser,
-          photoUrl: resizedImage,
-        };
-        dispatch(refreshUser(newUser));
+        const user = await getCurrentUser();
+        console.log(user);
+        dispatch(refreshUser(currentUser));
       })
       .catch((err) => {
         console.log(err);
@@ -60,7 +61,6 @@ const UserProfilePage = () => {
           onChange={handleChangeImage}
           accept="image/*"
           required
-          className="real-input"
         />
         <img
           src={photoUrl}
@@ -69,11 +69,9 @@ const UserProfilePage = () => {
           onClick={ChangeImageClick}
         />
       </div>
-      <div className="user-info">
-        <div className="user name">이름 : {displayName}</div>
-        <div className="user email">이메일 : {email}</div>
-        <div className="user kakao-id">카카오톡 아이디 : {kakaoId}</div>
-      </div>
+      <div className="user-name">{displayName}</div>
+      <div className="user-email">{email}</div>
+      <div className="user-kakao-id">{kakaoId}</div>
     </div>
   );
 };

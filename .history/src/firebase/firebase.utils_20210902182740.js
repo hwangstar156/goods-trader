@@ -1,7 +1,6 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
-import "firebase/storage";
 const firebaseConfig = {
   apiKey: "AIzaSyA4Yej4rm_6kEVYWOdhRIdOiDToCqiwOhI",
   authDomain: "goods-traders.firebaseapp.com",
@@ -78,10 +77,10 @@ facebookProvider.setCustomParameters({ prompt: "select_account" });
 export const signInWithFacebook = () => auth.signInWithPopup(facebookProvider);
 export default firebase;
 
-const storage = firebase.storage();
-const storageRef = storage.ref();
+export const storage = firebase.storage();
+export const storageRef = storage.ref();
 
-export const updateUserProfileImage = async (user, data) => {
+export const updateUserProfileImage = (user, data) => {
   const userStorage = storageRef.child(`images/${user.id}`);
-  return await userStorage.put(data);
+  userStorage.put(data).then((snapshot) => console.log(snapshot));
 };

@@ -1,0 +1,10 @@
+.profile-img {
+  width: 16rem;
+  height: 16rem;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+  & .real-input {
+    display: none;
+  }
+}

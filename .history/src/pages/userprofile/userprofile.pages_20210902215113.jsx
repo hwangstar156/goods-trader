@@ -1,19 +1,18 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 import "./userprofile.styles.scss";
-import {
-  changeUserImage,
-  updateUserProfileImage,
-} from "../../firebase/firebase.utils";
+import { updateUserProfileImage } from "../../firebase/firebase.utils";
 import resizeImage from "./userprofile.utils";
 import { useRef } from "react";
-import { refreshUser } from "../../redux/user/user.action";
+import { useEffect } from "react";
+import { useState } from "react";
 const UserProfilePage = () => {
   const currentUser = useSelector(selectCurrentUser);
-  const { displayName, email, kakaoId, photoUrl } = currentUser;
+  const { displayName, email, kakaoId } = currentUser;
+  const [photoUrl, setPhotoUrl] = useState("");
   const inputRef = useRef(null);
-  const dispatch = useDispatch();
+
   const LoadingImage = (e) => {
     const img = e.target;
     const imgTag = e.target.parentNode;
@@ -27,30 +26,22 @@ const UserProfilePage = () => {
   };
 
   const handleChangeImage = async (e) => {
-    const response = await updateUserProfileImage(
-      currentUser,
-      e.target.files[0]
-    );
-    const fileUrl = await response.ref.getDownloadURL();
-
+    const response = updateUserProfileImage(currentUser, e.target.files[0]);
+    const fileUrl = (await response).ref.getDownloadURL();
     const config = {
       file: fileUrl,
-      maxSize: 540,
+      maxSize: 350,
     };
     resizeImage(config)
-      .then(async (resizedImage) => {
-        changeUserImage(currentUser, resizedImage);
-        const newUser = {
-          ...currentUser,
-          photoUrl: resizedImage,
-        };
-        dispatch(refreshUser(newUser));
+      .then((resizedImage) => {
+        setPhotoUrl(resizedImage);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
+  useEffect(() => {}, []);
   return (
     <div className="profile-container">
       <div className="profile-img">
@@ -60,7 +51,6 @@ const UserProfilePage = () => {
           onChange={handleChangeImage}
           accept="image/*"
           required
-          className="real-input"
         />
         <img
           src={photoUrl}
@@ -69,11 +59,9 @@ const UserProfilePage = () => {
           onClick={ChangeImageClick}
         />
       </div>
-      <div className="user-info">
-        <div className="user name">이름 : {displayName}</div>
-        <div className="user email">이메일 : {email}</div>
-        <div className="user kakao-id">카카오톡 아이디 : {kakaoId}</div>
-      </div>
+      <div className="user-name">{displayName}</div>
+      <div className="user-email">{email}</div>
+      <div className="user-kakao-id">{kakaoId}</div>
     </div>
   );
 };

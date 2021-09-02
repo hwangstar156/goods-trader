@@ -51,7 +51,6 @@ export const signUpFailure = (err) => ({
   payload: err,
 });
 
-export const refreshUser = (user) => ({
+export const refreshUser = () => ({
   type: UserActionTypes.REFRESH_USER,
-  payload: user,
 });

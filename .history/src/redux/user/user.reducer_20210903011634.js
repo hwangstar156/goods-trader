@@ -8,12 +8,16 @@ const INITIAL_STATE = {
 
 const userReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
+    case UserActionTypes.REFRESH_USER:
+      return {
+        ...state,
+        currentUser: action.payload,
+      };
     case UserActionTypes.CHECK_USER_SESSION:
       return {
         ...state,
         isFetching: true,
       };
-    case UserActionTypes.REFRESH_USER:
     case UserActionTypes.SIGN_IN_SUCCESS:
       return {
         ...state,

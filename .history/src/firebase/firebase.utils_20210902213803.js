@@ -83,5 +83,7 @@ const storageRef = storage.ref();
 
 export const updateUserProfileImage = async (user, data) => {
   const userStorage = storageRef.child(`images/${user.id}`);
-  return await userStorage.put(data);
+  const res = await userStorage.putString(data, "data_url");
+  const fileUrl = res.ref.getDownloadURL();
+  console.log(fileUrl);
 };

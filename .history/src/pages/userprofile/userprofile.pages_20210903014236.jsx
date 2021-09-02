@@ -70,9 +70,9 @@ const UserProfilePage = () => {
         />
       </div>
       <div className="user-info">
-        <div className="user name">이름 : {displayName}</div>
-        <div className="user email">이메일 : {email}</div>
-        <div className="user kakao-id">카카오톡 아이디 : {kakaoId}</div>
+        <div className="user-name">이름 : {displayName}</div>
+        <div className="user-email">이메일 : {email}</div>
+        <div className="user-kakao-id">카카오톡 아이디 : {kakaoId}</div>
       </div>
     </div>
   );

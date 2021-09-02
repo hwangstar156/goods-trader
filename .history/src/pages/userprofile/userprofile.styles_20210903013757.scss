@@ -1,0 +1,13 @@
+.profile-img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  border-radius: 50%;
+  position: absolute;
+  left: 300px;
+  top: 300px;
+
+  & .real-input {
+    display: none;
+  }
+}

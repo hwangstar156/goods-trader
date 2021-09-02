@@ -81,7 +81,7 @@ export default firebase;
 const storage = firebase.storage();
 const storageRef = storage.ref();
 
-export const updateUserProfileImage = async (user, data) => {
+export const updateUserProfileImage = (user, data) => {
   const userStorage = storageRef.child(`images/${user.id}`);
-  return await userStorage.put(data);
+  userStorage.put(data).then((snapshot) => console.log(snapshot));
 };

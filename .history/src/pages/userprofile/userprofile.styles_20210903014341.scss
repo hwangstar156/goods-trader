@@ -1,5 +1,5 @@
 .profile-container {
-  padding: 6rem;
+  padding: 4rem;
 
   & .profile-img {
     width: 16rem;
@@ -13,11 +13,5 @@
   }
 
   & .user-info {
-    font-size: 1.6rem;
-    margin-top: 5rem;
-
-    & .user {
-      margin-top: 2rem;
-    }
   }
 }
