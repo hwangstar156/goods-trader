@@ -1,0 +1,14 @@
+.menu-container {
+  display: flex;
+  margin-left: 7rem;
+  margin-top: 8.5rem;
+
+  & .menu-items {
+    border-radius: 2rem;
+    width: 70%;
+    height: 40rem;
+    background-color: white;
+    scrollbar-width: none;
+    overflow: auto;
+  }
+}

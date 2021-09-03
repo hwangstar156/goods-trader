@@ -1,0 +1,17 @@
+.menu-container {
+  display: flex;
+  margin-left: 7rem;
+  margin-top: 8.5rem;
+  -ms-overflow-style: none;
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+
+  & .menu-items {
+    border-radius: 2rem;
+    width: 80%;
+    height: 40rem;
+    background-color: white;
+    overflow: auto;
+  }
+}

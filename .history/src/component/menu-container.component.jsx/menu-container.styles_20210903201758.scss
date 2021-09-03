@@ -1,0 +1,11 @@
+.menu-container {
+  display: flex;
+
+  & .menu-items {
+    width: 70%;
+    height: 40rem;
+    background-color: black;
+    margin-left: 7rem;
+    overflow: scroll;
+  }
+}

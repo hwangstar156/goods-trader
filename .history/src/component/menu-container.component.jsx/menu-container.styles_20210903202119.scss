@@ -1,0 +1,12 @@
+.menu-container {
+  display: flex;
+  margin-left: 7rem;
+  margin-top: 8.5rem;
+  & .menu-items {
+    width: 70%;
+    height: 40rem;
+    background-color: black;
+
+    overflow: scroll;
+  }
+}

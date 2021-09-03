@@ -1,0 +1,15 @@
+.menu-item {
+  & .background-image {
+    position: relative;
+    height: 900px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    & .content {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+  }
+}

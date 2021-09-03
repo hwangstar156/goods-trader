@@ -1,0 +1,25 @@
+.menu-container {
+  display: flex;
+  margin-left: 7rem;
+  margin-top: 8.5rem;
+  height: 40rem;
+  -ms-overflow-style: none;
+  & ::-webkit-scrollbar {
+    display: none;
+  }
+
+  & .menu-items {
+    border-radius: 2rem;
+    width: 75%;
+    overflow: auto;
+  }
+
+  & .menu-aside {
+    list-style: none;
+    width: 15%;
+    margin-left: 5rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+    padding-left: 3rem;
+  }
+}
