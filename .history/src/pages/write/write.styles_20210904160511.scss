@@ -1,0 +1,18 @@
+.write-container {
+  display: flex;
+  height: 100vh;
+
+  & .inputs-form {
+    display: flex;
+    flex-direction: column;
+
+    & .head-input {
+      height: 6rem;
+    }
+
+    & .main-input {
+      width: 50rem;
+      height: 35rem;
+    }
+  }
+}

@@ -1,0 +1,125 @@
+import React from "react";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { firestore, storageRef } from "../../firebase/firebase.utils";
+import { selectCurrentUser } from "../../redux/user/user.selector";
+import { v4 as uuidv4 } from "uuid";
+import { useRef } from "react";
+import MenuAside from "../../component/menu-aside/menu-aside.component";
+import "github-markdown-css";
+import "./write.styles.scss";
+import { selectIdols } from "../../redux/idol/idol.selector";
+const WritePage = () => {
+  const imgRef = useRef(null);
+  const currentUser = useSelector(selectCurrentUser);
+  const idolCollection = useSelector(selectIdols);
+  const [text, setText] = useState({
+    headText: "",
+    mainText: "",
+  });
+  const [file, setFile] = useState("");
+  const { headText, mainText } = text;
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    let fileUrl = "";
+    const fileRef = storageRef.child(`${currentUser.id}/${uuidv4()}`);
+    const responce = await fileRef.put(file);
+
+    console.log(responce);
+    responce.ref.getDownloadURL().then((url) => {
+      fileUrl = url;
+      imgRef.current.src = url;
+    });
+
+    const writing = {
+      headText,
+      mainText,
+      createAt: Date.now(),
+      fileUrl,
+    };
+    firestore.collection("writings").add(writing);
+    setFile("");
+    setText({
+      ...text,
+      headText: "",
+      mainText: "",
+    });
+  };
+
+  const onChangeTextInput = (e) => {
+    const name = e.target.name;
+    setText({
+      ...text,
+      [name]: e.target.value,
+    });
+  };
+
+  const onChangeFiles = (e) => {
+    const theFile = e.target.files[0];
+    if (!theFile) {
+      return;
+    }
+    if (!theFile.type.match(/image.*/)) {
+      return;
+    }
+    setFile(theFile);
+  };
+
+  const onChangeSelectIdol = (e) => {
+    console.log(e.target);
+  };
+
+  return (
+    <div className="write-container">
+      <form onSubmit={onSubmit} className="inputs-form">
+        <select
+          name="idol"
+          id="select-collection"
+          value="아이돌"
+          onChange={onChangeSelectIdol}
+        >
+          {idolCollection.map(({ id, title }) => (
+            <option key={id} value={title}>
+              {title}
+            </option>
+          ))}
+        </select>
+        <input
+          type="text"
+          name="headText"
+          className="head-input"
+          value={headText}
+          placeholder="제목"
+          onChange={onChangeTextInput}
+        />
+        <textarea
+          type="text"
+          placeholder="글을 작성해보세요"
+          className="main-input"
+          name="mainText"
+          value={mainText}
+          onChange={onChangeTextInput}
+        />
+        <input
+          type="file"
+          accept="image/*"
+          onChange={onChangeFiles}
+          className="file-input"
+        />
+        <footer className="footer-element">
+          <button type="button" className="file-btn">
+            사진 등록
+          </button>
+          <input type="submit" className="submit-btn" value="등록하기" />
+        </footer>
+      </form>
+      <MenuAside className="menu-aside" />
+      <div className="image-preview">
+        <img src="" alt="" ref={imgRef} />
+      </div>
+    </div>
+  );
+};
+
+export default WritePage;

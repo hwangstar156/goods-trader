@@ -1,0 +1,31 @@
+.header-container {
+  display: flex;
+  position: relative;
+  left: 3rem;
+  top: 3rem;
+  & .logo-img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  & .header-element {
+    display: flex;
+    position: absolute;
+    right: 11rem;
+    font-size: 1.3rem;
+    line-height: 40px;
+    font-weight: 600;
+    & .header-write {
+      margin-right: 2rem;
+    }
+
+    & .header-photocard {
+      margin-right: 2rem;
+    }
+
+    & .header-sneakers {
+      margin-right: 5rem;
+    }
+  }
+}
