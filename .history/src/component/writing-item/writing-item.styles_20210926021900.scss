@@ -1,0 +1,13 @@
+
+.writing-card {
+    width : 100%;
+    display: flex;
+    padding : 1rem;
+    background-color: rgb(205, 225, 255);
+    border-radius: 1rem;
+    margin-top: 2rem;
+
+    & .writing-info {
+        margin-left : 2rem;
+    }
+}
