@@ -13,8 +13,8 @@
 
     &:hover{
         cursor: pointer;
-        transform: scale(1.007);
-        transition: transform 300ms ease-out;
+        transform: scale(1.05);
+        transition: transform 300ms ease-in;
     }
     & .writing-image {
         align-self: center;
