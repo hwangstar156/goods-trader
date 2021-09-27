@@ -12,6 +12,7 @@ import { selectIdols } from "../../redux/idol/idol.selector";
 import resizeImage from "../userprofile/userprofile.utils";
 import { useHistory } from "react-router";
 import { addWritingStart } from "../../redux/writings/wirtings.action";
+import { Spinner } from "reactstrap";
 const WritePage = () => {
   const history = useHistory();
   const imgRef = useRef(null);
@@ -26,6 +27,7 @@ const WritePage = () => {
   const [boardId, setBoardId] = useState("");
   const [fileUrl, setFileUrl] = useState("");
   const [thumbnailUrl, setThumbnailUrl] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const { headText, mainText } = text;
   const nextId = useRef(0);
 
@@ -88,6 +90,7 @@ const WritePage = () => {
   };
 
   const onChangeFiles = async (e) => {
+    setIsLoading(true);
     const theFile = e.target.files[0];
     if (!theFile) {
       return;
@@ -117,6 +120,10 @@ const WritePage = () => {
         setFileUrl(resizedImage);
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleImgLoading = () => {
+    setIsLoading(false);
   };
 
   const onChangeSelectIdol = (e) => {
@@ -173,8 +180,16 @@ const WritePage = () => {
           ref={inputRef}
         />
         <div className="image-preview">
-          <p>사진</p>
-          <img src={thumbnailUrl} alt="" ref={imgRef} />
+          <div>
+            <p>사진</p>
+            <img
+              src={thumbnailUrl}
+              alt=""
+              ref={imgRef}
+              onLoad={handleImgLoading}
+            />
+          </div>
+          {isLoading && <Spinner />}
         </div>
         <footer className="footer-element">
           <button

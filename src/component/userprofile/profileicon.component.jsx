@@ -19,7 +19,7 @@ const ProfileIcon = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const currentUser = useSelector(selectCurrentUser);
-  const { photoUrl } = currentUser;
+  const { photoUrl, id } = currentUser;
   const handleSignOutClick = () => {
     dispatch(signOutStart());
   };
@@ -36,6 +36,10 @@ const ProfileIcon = () => {
     history.push("/profile");
   };
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+  const checkmyWritings = () => {
+    history.push(`/collection/user/${id}`);
+  };
 
   useEffect(() => {
     const handleChangeImage = async (e) => {
@@ -67,6 +71,8 @@ const ProfileIcon = () => {
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem onClick={moveToProfilePage}>마이 프로필</DropdownItem>
+        <DropdownItem divider />
+        <DropdownItem onClick={checkmyWritings}>내 작성물</DropdownItem>
         <DropdownItem divider />
         <DropdownItem onClick={handleSignOutClick}>로그아웃</DropdownItem>
       </DropdownMenu>
