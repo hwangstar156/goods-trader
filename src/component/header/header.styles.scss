@@ -3,11 +3,13 @@
 .header-container {
   display: flex;
   position: relative;
-  left: 3rem;
-  top: 3rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1.5px solid rgb(75, 75, 75);
+  background-color: rgb(235, 235, 235);
+  opacity: 0.9;
   & .logo-img {
-    width: 50px;
-    height: 50px;
     cursor: pointer;
   }
 

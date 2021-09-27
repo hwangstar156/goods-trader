@@ -16,6 +16,7 @@
         transform: scale(1.007);
         transition: transform 300ms ease-out;
     }
+
     & .writing-image {
         align-self: center;
     }
@@ -24,8 +25,5 @@
         margin-top : 1rem;
         margin-left : 2rem;
         font-family: "Jua", sans-serif;
-        
     }
-
-
 }

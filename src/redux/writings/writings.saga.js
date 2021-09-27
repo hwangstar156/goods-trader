@@ -33,7 +33,7 @@ export function* addWritings({ payload: { writing, id } }) {
   }
 }
 
-export function* deleteWriting(id) {
+export function* deleteWriting({ payload: id }) {
   try {
     yield firestore.collection("writings").doc(id).delete();
     yield fetchWritingData();

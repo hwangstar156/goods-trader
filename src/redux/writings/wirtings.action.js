@@ -28,8 +28,9 @@ export const addWritingFailure = (err) => ({
   payload: err,
 });
 
-export const deleteWritingStart = () => ({
+export const deleteWritingStart = (id) => ({
   type: WritingActionTypes.deleteWritingStart,
+  payload: id,
 });
 
 export const deleteWritingSuccess = () => ({

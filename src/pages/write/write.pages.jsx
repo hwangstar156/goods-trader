@@ -138,7 +138,7 @@ const WritePage = () => {
             onChange={onChangeSelectIdol}
             className="idol-selector"
           >
-            <option selected disabled hidden>
+            <option defaultValue disabled hidden>
               선택해주세요
             </option>
             {idolCollection.map(({ id, title }) => (

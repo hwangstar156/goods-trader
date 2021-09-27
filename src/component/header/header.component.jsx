@@ -21,7 +21,7 @@ const Header = () => {
       <div className="header-container">
         <div className="logo" onClick={handleLogoClick}>
           <img
-            src="../../../public/goods-traders.png"
+            src="https://r77.cooltext.com/rendered/cooltext394050668121165.png"
             alt=""
             className="logo-img"
           />
@@ -29,14 +29,14 @@ const Header = () => {
         <div className="header-element">
           {isLoggedIn ? (
             <Link className="header-write" to="/write">
-              📝글쓰기
+              📝 글쓰기
             </Link>
           ) : null}
 
           <Link className="header-photocard" to="/collection">
-            🗳전체 포토카드
+            🗳 전체 포토카드
           </Link>
-          <div className="header-sneakers">👟신발</div>
+          <div className="header-sneakers">👟 신발</div>
           {currentUser ? (
             <ProfileIcon />
           ) : (
