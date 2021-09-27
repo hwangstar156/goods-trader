@@ -35,8 +35,8 @@ const WritePage = () => {
     const dateObj = new Date();
     const createAt = Date.now();
     const year = dateObj.getFullYear();
-    const month = dateObj.getMonth();
-    const day = dateObj.getDay();
+    const month = dateObj.getMonth() + 1;
+    const day = dateObj.getDate();
 
     return {
       createAt,
@@ -78,7 +78,18 @@ const WritePage = () => {
     });
     setFileUrl("");
     setThumbnailUrl("");
-    history.push("/");
+
+    setTimeout(() => {
+      if (
+        window.confirm(
+          "글이 성공적으로 등록되었습니다. 홈 화면으로 돌아가시겠습니까?"
+        )
+      ) {
+        history.push("/");
+      } else {
+        return;
+      }
+    });
   };
 
   const onChangeTextInput = (e) => {
@@ -181,7 +192,7 @@ const WritePage = () => {
         />
         <div className="image-preview">
           <div>
-            <p>사진</p>
+            <p>미리보기</p>
             <img
               src={thumbnailUrl}
               alt=""

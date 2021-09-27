@@ -80,7 +80,7 @@ const SignInPage = () => {
             <strong>Goods traders</strong>는 각종 아이돌 포토카드, 맞지 않는
             신발 사이즈의 교환을 목적으로 만들어진 사이트입니다.
           </div>
-          <p>우리 홈페이지는 야코좆똥승우와 함께합니다.</p>
+          <p>홈페이지 관련 문의 : hwangstar156@gmail.com</p>
         </div>
         <form className="sign-in-form" onSubmit={onSubmit}>
           <h2>Sign In</h2>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./sign-up.styles.scss";
 import { signUpStart } from "../../redux/user/user.action";
 import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { selectUserError } from "../../redux/user/user.selector";
 const SignUpPage = () => {
   const [userCredential, setUserCredential] = useState({
@@ -17,7 +18,7 @@ const SignUpPage = () => {
     userCredential;
   const signUpError = useSelector(selectUserError);
   const dispatch = useDispatch();
-
+  const history = useHistory();
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -55,6 +56,10 @@ const SignUpPage = () => {
         photoUrl,
       })
     );
+    setTimeout(() => {
+      alert("회원가입이 완료되었습니다");
+      history.push("/");
+    }, 0);
   };
 
   return (

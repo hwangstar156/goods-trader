@@ -34,9 +34,9 @@ const WritingItem = ({ ...writing }) => {
         <p className="writing-text">{mainText.slice(0, 100)}</p>
         <p className="writing-created-at">{`작성일자 : ${year}/${month}/${day}`}</p>
       </div>
-      {userId === currentUser.id ? (
-        <button type="button" onClick={deleteWriting}>
-          글 삭제
+      {userId === currentUser?.id ? (
+        <button type="button" onClick={deleteWriting} className="delete-btn">
+          Delete
         </button>
       ) : null}
     </div>

@@ -5,7 +5,7 @@ import SignInPage from "./component/sign-in/sign-in.component";
 import UserProfileContainer from "./pages/userprofile/userprofile.container";
 import React, { useEffect } from "react";
 import Header from "./component/header/header.component";
-import HomePage from "./pages/homepage.component";
+import HomePage from "./pages/Homepage/homepage.component";
 import { useDispatch, useSelector } from "react-redux";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { checkUserSession } from "./redux/user/user.action";

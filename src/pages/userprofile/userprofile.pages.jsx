@@ -12,7 +12,7 @@ import {
   refreshUserStart,
   refreshUserSuccess,
 } from "../../redux/user/user.action";
-import HomePage from "../homepage.component";
+import HomePage from "../Homepage/homepage.component";
 const UserProfilePage = () => {
   const currentUser = useSelector(selectCurrentUser);
   const { displayName, email, kakaoId, photoUrl } = currentUser;
