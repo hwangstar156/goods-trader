@@ -21,7 +21,7 @@ const Header = () => {
       <div className="header-container">
         <div className="logo" onClick={handleLogoClick}>
           <img
-            src="https://www.freepnglogos.com/uploads/logo-website-png/logo-website-file-globe-icon-svg-wikimedia-commons-21.png"
+            src="../../../public/goods-traders.png"
             alt=""
             className="logo-img"
           />
@@ -34,7 +34,7 @@ const Header = () => {
           ) : null}
 
           <Link className="header-photocard" to="/collection">
-            🗳포토카드
+            🗳전체 포토카드
           </Link>
           <div className="header-sneakers">👟신발</div>
           {currentUser ? (

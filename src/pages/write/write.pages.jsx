@@ -28,19 +28,45 @@ const WritePage = () => {
   const [thumbnailUrl, setThumbnailUrl] = useState("");
   const { headText, mainText } = text;
   const nextId = useRef(0);
+
+  const getDate = () => {
+    const dateObj = new Date();
+    const createAt = Date.now();
+    const year = dateObj.getFullYear();
+    const month = dateObj.getMonth();
+    const day = dateObj.getDay();
+
+    return {
+      createAt,
+      year,
+      month,
+      day,
+    };
+  };
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
+    if (!boardId) {
+      alert("게시판을 선택해주세요");
+      return;
+    }
+
+    const { day, createAt, month, year } = getDate();
     const writing = {
       userId: currentUser.id,
       headText,
       mainText,
-      createAt: Date.now(),
+      createAt,
       fileUrl,
       thumbnailUrl,
       boardId,
       writingId: uuidv4(),
+      day,
+      month,
+      year,
     };
+
     dispatch(addWritingStart(writing, writing.writingId));
     nextId.current += 1;
     setText({
@@ -112,6 +138,9 @@ const WritePage = () => {
             onChange={onChangeSelectIdol}
             className="idol-selector"
           >
+            <option selected disabled hidden>
+              선택해주세요
+            </option>
             {idolCollection.map(({ id, title }) => (
               <option key={id} value={title}>
                 {title}

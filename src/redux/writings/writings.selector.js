@@ -11,3 +11,8 @@ export const selectCurentWriting = createSelector(
   [selectWriting],
   (writing) => writing.writings
 );
+
+export const selectFetchCount = createSelector(
+  [selectWriting],
+  (writing) => writing.fetchCount
+);

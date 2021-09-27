@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   isFetching: false,
   writings: [],
   error: null,
+  fetchCount: 0,
 };
 
 const writingReducer = (state = INITIAL_STATE, action) => {
@@ -15,6 +16,7 @@ const writingReducer = (state = INITIAL_STATE, action) => {
         ...state,
         isFetching: true,
         error: null,
+        fetchCount: state.fetchCount + 1,
       };
     case WritingActionTypes.fetchWritingSuccess:
       return {
