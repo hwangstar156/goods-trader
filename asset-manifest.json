@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/goods-trader/static/css/main.1c655303.chunk.css",
-    "main.js": "/goods-trader/static/js/main.3dc47012.chunk.js",
-    "main.js.map": "/goods-trader/static/js/main.3dc47012.chunk.js.map",
+    "main.css": "/goods-trader/static/css/main.60914742.chunk.css",
+    "main.js": "/goods-trader/static/js/main.e6b372a9.chunk.js",
+    "main.js.map": "/goods-trader/static/js/main.e6b372a9.chunk.js.map",
     "runtime-main.js": "/goods-trader/static/js/runtime-main.157e0667.js",
     "runtime-main.js.map": "/goods-trader/static/js/runtime-main.157e0667.js.map",
     "static/css/2.d1544a46.chunk.css": "/goods-trader/static/css/2.d1544a46.chunk.css",
@@ -12,14 +12,14 @@
     "static/js/3.6a553689.chunk.js.map": "/goods-trader/static/js/3.6a553689.chunk.js.map",
     "index.html": "/goods-trader/index.html",
     "static/css/2.d1544a46.chunk.css.map": "/goods-trader/static/css/2.d1544a46.chunk.css.map",
-    "static/css/main.1c655303.chunk.css.map": "/goods-trader/static/css/main.1c655303.chunk.css.map",
+    "static/css/main.60914742.chunk.css.map": "/goods-trader/static/css/main.60914742.chunk.css.map",
     "static/js/2.496c2a22.chunk.js.LICENSE.txt": "/goods-trader/static/js/2.496c2a22.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.157e0667.js",
     "static/css/2.d1544a46.chunk.css",
     "static/js/2.496c2a22.chunk.js",
-    "static/css/main.1c655303.chunk.css",
-    "static/js/main.3dc47012.chunk.js"
+    "static/css/main.60914742.chunk.css",
+    "static/js/main.e6b372a9.chunk.js"
   ]
 }
