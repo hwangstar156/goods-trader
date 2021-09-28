@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/goods-trader/static/css/main.4eb5d9a3.chunk.css",
-    "main.js": "/goods-trader/static/js/main.a48e24d2.chunk.js",
-    "main.js.map": "/goods-trader/static/js/main.a48e24d2.chunk.js.map",
+    "main.js": "/goods-trader/static/js/main.5ffa467a.chunk.js",
+    "main.js.map": "/goods-trader/static/js/main.5ffa467a.chunk.js.map",
     "runtime-main.js": "/goods-trader/static/js/runtime-main.157e0667.js",
     "runtime-main.js.map": "/goods-trader/static/js/runtime-main.157e0667.js.map",
     "static/css/2.d1544a46.chunk.css": "/goods-trader/static/css/2.d1544a46.chunk.css",
@@ -20,6 +20,6 @@
     "static/css/2.d1544a46.chunk.css",
     "static/js/2.496c2a22.chunk.js",
     "static/css/main.4eb5d9a3.chunk.css",
-    "static/js/main.a48e24d2.chunk.js"
+    "static/js/main.5ffa467a.chunk.js"
   ]
 }
