@@ -1,5 +1,5 @@
 import "./App.css";
-import { Switch, Route, Redirect, useHistory } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import SignUpPage from "./component/sign-up/sign-up.component";
 import SignInPage from "./component/sign-in/sign-in.component";
 import UserProfileContainer from "./pages/userprofile/userprofile.container";
@@ -16,11 +16,10 @@ import UserCollection from "./pages/userCollection/user-collection.component";
 const App = () => {
   const currentUser = useSelector(selectCurrentUser);
   const dispatch = useDispatch();
-  const history = useHistory();
+
   useEffect(() => {
-    history.push("/");
     dispatch(checkUserSession());
-  }, [dispatch, history]);
+  }, [dispatch]);
 
   return (
     <>

@@ -20,7 +20,11 @@ const Header = () => {
     <>
       <div className="header-container">
         <div className="logo" onClick={handleLogoClick}>
-          Goods Trader
+          <img
+            src="https://r77.cooltext.com/rendered/cooltext394050668121165.png"
+            alt=""
+            className="logo-img"
+          />
         </div>
         <div className="header-element">
           {isLoggedIn ? (

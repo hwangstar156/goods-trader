@@ -5,15 +5,16 @@
   position: relative;
   padding-top: 3rem;
   padding-left: 3rem;
-  padding-bottom: 1.7rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1.5px solid rgb(75, 75, 75);
   background-color: rgb(235, 235, 235);
   opacity: 0.9;
   z-index: 1;
   & .logo{
     cursor: pointer;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     font-family: "Jua", sans-serif;
+    
   }
 
   & .header-element {
