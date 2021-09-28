@@ -192,7 +192,7 @@ const WritePage = () => {
         />
         <div className="image-preview">
           <div>
-            <p>미리보기</p>
+            <p>📂미리보기</p>
             <img
               src={thumbnailUrl}
               alt=""

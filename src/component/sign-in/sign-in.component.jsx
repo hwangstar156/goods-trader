@@ -111,12 +111,20 @@ const SignInPage = () => {
             Login
           </button>
 
-          <button onClick={handleGoogleSignIn} className="google-btn btn">
+          <button
+            type="button"
+            onClick={handleGoogleSignIn}
+            className="google-btn btn"
+          >
             <i className="fab fa-google"></i>
             Login with Google
           </button>
 
-          <button onClick={handleFacebookSignIn} className="facebook-btn btn">
+          <button
+            type="button"
+            onClick={handleFacebookSignIn}
+            className="facebook-btn btn"
+          >
             <i className="fab fa-facebook-square"></i>
             Login with Facebook
           </button>
