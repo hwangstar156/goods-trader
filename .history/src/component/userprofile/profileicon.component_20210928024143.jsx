@@ -45,7 +45,7 @@ const ProfileIcon = () => {
     const handleChangeImage = async (e) => {
       const config = {
         file: photoUrl,
-        maxSize: 150,
+        maxSize: 100,
       };
       resizeImage(config)
         .then(async (resizedImage) => {
