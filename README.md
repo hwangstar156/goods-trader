@@ -1,70 +1,45 @@
-# Getting Started with Create React App
+# Goods Trader
+---
+### 🖼 아이돌 포토카드를 구매했을때 원하던 멤버가 나오지 않았을때 교환을 하고싶다면??
+<p> 라는 생각으로 포토카드 거래 사이트를 제작하였습니다 </p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![image](https://user-images.githubusercontent.com/85891751/135096194-f9f0a76a-ba7a-4004-a98d-97e1e6bb7392.png)
 
-## Available Scripts
+### 사용 기술 스택 🛠
 
-In the project directory, you can run:
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=white"/> <img src="https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=HTML5&logoColor=white"/> <img src="https://img.shields.io/badge/CSS-1572B6?style=flat-square&logo=CSS3&logoColor=white"/> <img src="https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white"/> <img src="https://img.shields.io/badge/Redux saga-999999?style=flat-square&logo=redux-saga&logoColor=white"/> <img src="https://img.shields.io/badge/firebase - FFCA28?style=flat-square&logo=firebase&logoColor=white"/>
 
-### `yarn start`
+### 기능
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### `유저 프로필 페이지`
+![image](https://user-images.githubusercontent.com/85891751/135099520-67c88a75-360e-4689-9d7f-0b0b700c0e26.png)
+ - 유저 사진이 보이는 동그라미를 클릭시 사진을 등록하여 프로필을 변경할수 있습니다  
+![image](https://user-images.githubusercontent.com/85891751/135101723-d4c8723b-5636-4a10-a257-b48c78c3432c.png)
+- 유저가 없을시에는 유저프로필 대신에 로그인을 보여주며 글쓰기 버튼이 보이지 않습니다.
+#### `아이돌별 게시판 페이지`
+![image](https://user-images.githubusercontent.com/85891751/135099848-5bd06228-2b1a-41a0-b3e8-a2065942aa3d.png)
+![image](https://user-images.githubusercontent.com/85891751/135100830-1aafa00f-a8aa-4083-a694-19a874f87b15.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 비어있을때는 비어있는 상태를 보여주는 페이지를 띄웁니다.
+- 각 게시판에 해당하는 글들을 필터링하여 보여줍니다.
 
-### `yarn test`
+#### `글쓰기 페이지`
+  
+![image](https://user-images.githubusercontent.com/85891751/135100027-14a8621e-14b0-447f-84cd-459e2a34f9ea.png)
+- 글을 제목과 본문으로 작성가능하며 사진등록을 클릭할시 사진을 업로드 할수있습니다(1장).
+- 그 글을 등록한 유저는 삭제또한 가능합니다.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### `기타 페이지`
+![image](https://user-images.githubusercontent.com/85891751/135101134-6d12b4a1-be92-4fdf-8786-09225fd052be.png)
+- 내 작성물칸에서 유저가 작성한 모든글을 모아 볼수있습니다.
+![image](https://user-images.githubusercontent.com/85891751/135101387-189da858-4886-496a-82a3-bd0b31b1ca3c.png)
+- 로그인이 가능하며 구글로그인, 페이스북 로그인 기능등이 있습니다.
+- **아직 계정이 없으신가요?** 를 클릭할시 회원가입 페이지로 이동합니다.
 
-### `yarn build`
+---
+### 버전
+`v 1.0.0`
+- 페이지 등록
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+`v 1.0.1`
+- 회원가입 중첩아이디일경우 에러처리 추가
