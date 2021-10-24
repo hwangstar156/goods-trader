@@ -1,10 +1,8 @@
 import React from "react";
+import "./writing-container.styles.scss";
 import { useSelector } from "react-redux";
-
 import { selectCurentWriting } from "../../redux/writings/writings.selector";
 import WritingItem from "../writing-item/writing-item.component";
-import "./writing-container.styles.scss";
-
 const WritingContainer = ({ boardId }) => {
   const writings = useSelector(selectCurentWriting);
 

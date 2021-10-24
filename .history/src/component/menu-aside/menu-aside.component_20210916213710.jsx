@@ -1,5 +1,4 @@
 import React from "react";
-
 import "./menu-aside.styles.scss";
 const MenuAside = () => {
   return (

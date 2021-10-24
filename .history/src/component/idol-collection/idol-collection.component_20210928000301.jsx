@@ -1,7 +1,6 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-
 import IdolCollectionPage from "../../pages/idolcollection/idol-collection.component";
+import { useParams } from "react-router-dom";
 
 const IdolCollection = () => {
   const { id } = useParams();

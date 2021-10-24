@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import "./menu-item.styles.scss";
-
 const MenuItem = ({ linkUrl, imageUrl, title }) => {
   return (
     <>

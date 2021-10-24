@@ -1,9 +1,9 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-import { selectCurrentUser } from "../../redux/user/user.selector.js";
-import { deleteWritingStart } from "../../redux/writings/wirtings.action";
 import "./writing-item.styles.scss";
+import { useSelector } from "react-redux";
+import { selectCurrentUser } from "../../redux/user/user.selector.js";
+import { useDispatch } from "react-redux";
+import { deleteWritingStart } from "../../redux/writings/wirtings.action";
 
 const WritingItem = ({ ...writing }) => {
   const {

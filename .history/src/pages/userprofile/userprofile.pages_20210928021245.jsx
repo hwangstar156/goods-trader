@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import { selectCurrentUser } from "../../redux/user/user.selector";
 import "./userprofile.styles.scss";
 import {
@@ -8,12 +7,12 @@ import {
   updateUserProfileImage,
 } from "../../firebase/firebase.utils";
 import resizeImage from "./userprofile.utils";
+import { useRef } from "react";
 import {
   refreshUserStart,
   refreshUserSuccess,
 } from "../../redux/user/user.action";
 import HomePage from "../Homepage/homepage.component";
-
 const UserProfilePage = () => {
   const currentUser = useSelector(selectCurrentUser);
   const { displayName, email, kakaoId, photoUrl } = currentUser;

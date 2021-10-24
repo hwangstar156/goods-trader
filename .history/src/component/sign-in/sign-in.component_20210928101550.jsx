@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-
+import React from "react";
+import { useState } from "react";
 import { signInWithFacebook } from "../../firebase/firebase.utils";
+import { Link } from "react-router-dom";
 import "./sign-in.styles.scss";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { selectUserError } from "../../redux/user/user.selector";
 import {
   emailSignInStart,
   googleSignInStart,
 } from "../../redux/user/user.action";
-
 const SignInPage = () => {
   const [loginInput, setLoginInput] = useState({
     email: "",
